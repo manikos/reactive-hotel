@@ -4,8 +4,9 @@
   "description": "A test e-shop project in order to understand how GraphQL, Graphene, Apollo and React work together.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "prod": "webpack -p",
+    "server": "NODE_ENV=development webpack-dev-server --config webpack/local.config.js",
+    "dev": "NODE_ENV=development webpack -d --config webpack/local.config.js",
+    "prod": "NODE_ENV=production webpack -p --config webpack/prod.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -27,10 +28,12 @@
     "react-dom": "^15.6.1",
     "webpack": "^2.6.1",
     "webpack-bundle-tracker": "^0.2.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^2.5.0",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "react": "^15.6.1",
+    "react-apollo": "^1.4.3",
     "react-dom": "^15.6.1"
   }
 }
